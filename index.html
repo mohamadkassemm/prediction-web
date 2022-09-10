@@ -6,11 +6,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Predctive Web</title>
+    <link rel="stylesheet" href="./css/styles.css" />
     <script src="javascript/javascript.js" type="text/javascript"></script>
 </head>
 
 <body>
-    
+    <div class="container">
+        <div id="image-placement" class="image-result"> <!-- this division contains the dog image i will fetch from the API-->
+            <p>Dog image</p>
+        </div>
+        <div>
+            <input type="text" id="name" placeholder="type your name here"> <!-- Input btn of type text to let the user insert his name, i put placeholder to let him where-->
+        </div>
+        <div>
+            <button id="predict-btn">Predict</button> <!--predict button when the user clicks on it, it return the results-->
+        </div>
+        <div>
+            <ul>
+                <p id="results-tittle">I predict your:</p> <!--results title for cleanliness-->
+                    <div class="results-container"><!--these are the results wanted-->
+                        <li class="result">Nationality:</li> 
+                        <li class="result">Age:</li>
+                        <li class="result">Gender: </li>
+                    </div>
+            </ul>
+        </div>
+    </div>
 </body>
 
 </html>

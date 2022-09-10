@@ -1,0 +1,31 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-result{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 200px;
+}
+
+#predict-btn{
+    background-color: black;
+    color: antiquewhite;
+    cursor: pointer;
+    margin: 10px;
+}
+
+#results-tittle{
+    font-size: 32px;
+    font-weight: bolder;
+}
+
+.results-container{
+    display: flex;
+    flex-direction: column;
+    font-size: larger;
+}
