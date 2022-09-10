@@ -6,6 +6,7 @@ window.onload=() => {
    const Age =document.getElementById("age")
    const Gender =document.getElementById("gender")
    const Name =document.querySelector('input')
+   const Greeting=document.getElementById("greeting")
 
     // fetching the api to take the url image of he random dog
    fetch("https://dog.ceo/api/breeds/image/random")
@@ -18,23 +19,24 @@ window.onload=() => {
     PredictButton.addEventListener("click",prediction)
 
     function prediction(){
+        Greeting.innerHTML= "Welcome"+" " + `${Name.value}`
         // fetching the api to take the nationality of the given name
         fetch(`https://api.nationalize.io/?name=${Name.value}`)
             .then(res => res.json())
             .then(data => {
-                Nationality.innerHTML = ` Nationalities:${data.country[0]["country_id"]},${data.country[1]["country_id"]}`
+                Nationality.innerHTML = ` <b>Nationalities</b>:<span class=result-text>${data.country[0]["country_id"]},${data.country[1]["country_id"]}</span>`
             })
         // fetching the api to take the age of the given name
         fetch(`https://api.agify.io/?name=${Name.value}`)
             .then(res => res.json())
             .then(data => {
-                Age.innerHTML = ` Age:${data.age}`
+                Age.innerHTML = ` <b>Age</b>:<span class=result-text>${data.age}</span>`
             }) 
         // fetching the api to take the gender of the given name
         fetch(`https://api.genderize.io/?name=${Name.value}`)
             .then(res => res.json())
             .then(data => {
-                Gender.innerHTML = ` Gender:${data.gender}`
+                Gender.innerHTML = ` <b>Gender</b>:<span class=result-text>${data.gender}</span>`
             })
     }
 

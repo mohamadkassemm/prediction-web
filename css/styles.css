@@ -7,6 +7,22 @@
     background-color: rgb(27, 25, 25);
 }
 
+.upper-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #3D8361;
+    width: 100%;
+}
+
+.lower-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #D6CDA4;
+    width: 100%;
+}
+
 .tittle{
     font-weight: bolder;
     font-size: larger;
@@ -24,10 +40,9 @@
 }
 
 .image-tittle-text{
-    background-color: white;
     font-weight: bold;
     font-family:Georgia, 'Times New Roman', Times, serif;
-    color: royalblue;
+    color: #EEF2E6;
 }
 
 .image-result{
@@ -41,39 +56,52 @@
 }
 
 #name{
-    width: 200px;
+    width: 300px;
+    height: 30px;
+    background-color: #EEF2E6;
 }
 
 .note{
-    color: red;
+    color: #1C6758;
     font-weight: bold;
 }
 
 #predict-btn{
-    background-color: white;
-    border:royalblue;
+    background-color: #1C6758;
+    border:#1C6758;
     border-radius: 10%;
     font-size: larger;
-    color: royalblue;
+    color:  #EEF2E6;
     cursor: pointer;
     margin: 10px;
     width: fit-content;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
-#results-tittle{
+#greeting{
     font-size: 32px;
     font-weight: bolder;
-    color: white;
+    color: #1C6758;
+}
+
+.results-tittle{
+    font-size: 32px;
+    font-weight: bolder;
+    color: #1C6758;
 }
 
 .results-container{
     display: flex;
     flex-direction: column;
     font-size: larger;
-    color: royalblue;
+    color:  #1C6758;
 }
 /* here i put the additional info */
 button:active{
     transform: scale(0.9);
+}
+
+.result-text{
+    color: #483838;
+    font-weight: bold;
 }
