@@ -1,33 +1,40 @@
 window.onload=() => {
+    // set of constants that i will use in the js file
    const image =document.getElementById("image-placement")
-   const predictButton =document.getElementById("predict-btn")
+   const PredictButton =document.getElementById("predict-btn")
    const Nationality =document.getElementById("nationality")
    const Age =document.getElementById("age")
    const Gender =document.getElementById("gender")
+   const Name =document.querySelector('input')
 
+    // fetching the api to take the url image of he random dog
    fetch("https://dog.ceo/api/breeds/image/random")
    .then(res => res.json())
    .then(data => {
        image.innerHTML = `<img class="image-result" src="${data.message}"/> `
    })
 
-    predictButton.addEventListener("click",prediction)
+    // adding event listner in order not to execute results untill the user types his name
+    PredictButton.addEventListener("click",prediction)
 
     function prediction(){
-        fetch("https://api.nationalize.io/?name=mohamad")
+        // fetching the api to take the nationality of the given name
+        fetch(`https://api.nationalize.io/?name=${Name.value}`)
             .then(res => res.json())
             .then(data => {
-                Nationality.innerHTML = `<p> Nationality:${data.country_id}</p>`
+                Nationality.innerHTML = ` Nationalities:${data.country[0]["country_id"]},${data.country[1]["country_id"]}`
             })
-        fetch("https://api.agify.io/?name=nour")
+        // fetching the api to take the age of the given name
+        fetch(`https://api.agify.io/?name=${Name.value}`)
             .then(res => res.json())
             .then(data => {
-                Age.innerHTML = `<p> Age:${data.age}</p>`
+                Age.innerHTML = ` Age:${data.age}`
             }) 
-        fetch("https://api.genderize.io/?name=rio")
+        // fetching the api to take the gender of the given name
+        fetch(`https://api.genderize.io/?name=${Name.value}`)
             .then(res => res.json())
             .then(data => {
-                Gender.innerHTML = `<p> Gender:${data.gender}</p>`
+                Gender.innerHTML = ` Gender:${data.gender}`
             })
     }
 
