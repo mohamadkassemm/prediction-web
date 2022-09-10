@@ -1,3 +1,5 @@
+/* I moved div by div not classes then ID's */
+
 .container{
     display: flex;
     flex-direction: column;
@@ -6,10 +8,12 @@
 
 .image-result{
     display: flex;
+    background-color:gray;
     justify-content: center;
     align-items: center;
     height: 300px;
     width: 200px;
+    margin: 20px;
 }
 
 #predict-btn{
@@ -28,4 +32,8 @@
     display: flex;
     flex-direction: column;
     font-size: larger;
+}
+/* here i put the additional info */
+button:active{
+    transform: scale(0.9);
 }
