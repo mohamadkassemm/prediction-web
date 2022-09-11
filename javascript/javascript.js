@@ -23,7 +23,7 @@ window.onload=() => {
         // fetching the api to take the nationality of the given name
         fetch(`https://api.nationalize.io/?name=${Name.value}`)
             .then(res => res.json())
-            .then(data => {
+            .then(data => {                                                                                         //didnt make a for loop since we know we need only at pos 1 and 2
                 Nationality.innerHTML = ` <b>Nationalities</b>:<span class=result-text>${data.country[0]["country_id"]},${data.country[1]["country_id"]}</span>`
             })
         // fetching the api to take the age of the given name
